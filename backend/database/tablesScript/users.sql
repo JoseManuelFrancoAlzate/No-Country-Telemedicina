@@ -12,5 +12,11 @@ CREATE TABLE IF NOT EXISTS public.users
     identification_type integer ,
     CONSTRAINT users_pkey PRIMARY KEY (id),
     CONSTRAINT users_email_key UNIQUE (email),
-    UNIQUE (identification_number)
+    UNIQUE (identification_number), 
+    CONSTRAINT users_login_email_fkey FOREIGN KEY (email)
+    REFERENCES public.login (email),
+    CONSTRAINT users_countries_id_fkey FOREIGN KEY (country_id)
+    REFERENCES public.country (id),
+    CONSTRAINT users_indentification_type_id_fkey FOREIGN KEY (identification_type)
+    REFERENCES public.identification_type (id),
 );
