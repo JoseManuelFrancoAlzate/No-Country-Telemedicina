@@ -1,0 +1,7 @@
+# Usado con la extensión REST Client
+
+GET http://localhost:3001/appointments
+
+###
+# Para buscar un appointment por nombre de doctor
+GET http://localhost:3001/appointments?name=dani
