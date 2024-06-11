@@ -12,11 +12,11 @@ CREATE TABLE IF NOT EXISTS public.doctors
     genre character varying(50),
     birth_date date,
     biography text COLLATE pg_catalog."default",
-    specialty_id bigint;
+    speciality_id bigint;
     CONSTRAINT doctors_pkey PRIMARY KEY (id),
     CONSTRAINT doctors_email_key UNIQUE (email),
     UNIQUE (licence_number, identification_number),
     CONSTRAINT doctors_login_email_fkey FOREIGN KEY (email)
     REFERENCES public.login (email),
-    CONSTRAINT doctor_specialty_specialty_fk FOREIGN KEY (id) REFERENCES public.specialty (id),
+    CONSTRAINT doctor_specialty_specialty_fk FOREIGN KEY (id) REFERENCES public.specialty (id)
 );

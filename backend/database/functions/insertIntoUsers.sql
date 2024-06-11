@@ -5,7 +5,7 @@ CREATE OR REPLACE FUNCTION insert_into_users (
 	p_identification character varying(50),
 	p_birth_date date,
 	p_profile_pic text,
-	p_genre genre,
+	p_genre character varying(50),
 	p_country_id integer,
 	p_indentification_type integer
 )

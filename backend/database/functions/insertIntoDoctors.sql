@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION insert_into_doctors (
     p_licence_number character varying(50),
-    p_dni character varying(50),
+    p_identification_number character varying(50),
     p_name character varying(50),
     p_last_name character varying(50),
     p_phone_number bigint,
@@ -9,14 +9,15 @@ CREATE OR REPLACE FUNCTION insert_into_doctors (
     p_licence_photo text,
     p_profile_picture text,
     p_birth_date date,
-    p_biography text
+    p_biography text,
+    p_speciality bigint
 )
 RETURNS VOID AS
 $$
 BEGIN 
     INSERT INTO doctors (
         licence_number, 
-        dni, 
+        identification_number, 
         name, 
         last_name, 
         phone_number, 
@@ -25,10 +26,11 @@ BEGIN
         licence_photo,
         profile_picture,
         birth_date,
-        biography
+        biography,
+        speciality_id
     ) VALUES (
         p_licence_number,
-        p_dni,
+        p_identification_number,
         p_name,
         p_last_name,
         p_phone_number,
@@ -37,7 +39,8 @@ BEGIN
         p_licence_photo,
         p_profile_picture,
         p_birth_date,
-        p_biography
+        p_biography,
+        p_speciality
     );
 END;
 $$

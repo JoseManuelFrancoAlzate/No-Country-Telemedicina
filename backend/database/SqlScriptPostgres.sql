@@ -197,16 +197,9 @@ ADD CONSTRAINT chk_doctor_rating CHECK ("doctor_rating" >= 1 AND "doctor_rating"
 -- INSERTS
 -- -----------------------------------------------------
 
--- Country Inserts
-INSERT INTO country ("country_name") VALUES ('Argentina');
-INSERT INTO country ("country_name") VALUES ('Colombia');
-INSERT INTO country ("country_name") VALUES ('Venezuela');
-INSERT INTO country ("country_name") VALUES ('Chile');
 
--- IDENTIFICATION_TYPE inserts
-INSERT INTO "identification_type" ("identification_name") VALUES ('Passport');
-INSERT INTO "identification_type" ("identification_name") VALUES ('Local Identification Number');
-INSERT INTO "identification_type" ("identification_name") VALUES ('DNI');
+
+
 
 -- USERS inserts
 INSERT INTO users ("name", "last_name", "email", "identification_number", "birth_date", "profile_picture", "genre", "country_id", "identification_type") VALUES ('Julian', 'Penagos', 'correo@correo.com', '1061804790', '1997-11-11', NULL, 'MALE', 2, 1);

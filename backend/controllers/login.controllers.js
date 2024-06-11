@@ -41,6 +41,7 @@ class LoginController {
       let phoneNumber;
       let licencePhoto;
       let active=false;
+      let speciality_id;
 
       
       
@@ -69,7 +70,8 @@ class LoginController {
           licencePhoto,
           profilePicture,
           birthDate,
-          biography
+          biography,
+          speciality_id
         ])
 
       }   

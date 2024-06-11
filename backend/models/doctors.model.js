@@ -6,7 +6,7 @@ class DoctorModel {
     /**
      * Realiza una ejecución de una función creada dentro de la base de datos
      */
-    postDoctor = 'SELECT insert_into_doctors($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)';
+    postDoctor = 'SELECT insert_into_doctors($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)';
   
     deleteDoctorByDni = 'DELETE FROM doctors WHERE dni = $1';
     deleteDoctorByEmail = 'DELETE FROM doctors WHERE email = $1';

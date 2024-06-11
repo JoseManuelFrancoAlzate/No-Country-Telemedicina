@@ -62,14 +62,15 @@ class DoctorsController {
       licencePhoto,
       profilePicture,
       birthDate,
-      biography
+      biography,
+      speciality
     } = result.data;
 
     try {
       await client.query(
         ClassDoctorModel.postDoctor, [
           licenceNumber,
-          dni,
+          identification_number,
           name,
           lastName,
           phoneNumber,
@@ -78,7 +79,8 @@ class DoctorsController {
           licencePhoto,
           profilePicture,
           birthDate,
-          biography
+          biography,
+          speciality
         ]);
 
       return res.status(200).json(result.data);
