@@ -120,6 +120,7 @@ class DoctorsController {
 
   async put(req, res) {
     const result = validatePutDoctor(req.body);
+    console.log(result.data)
 
     if (result.error) {
       return res.status(400).json(result.error.issues);
@@ -133,39 +134,41 @@ class DoctorsController {
         name,
         lastName,
         phoneNumber,
-        email,
         active,
         licencePhoto,
         profilePicture,
         birthDate,
         biography,
-        speciality_id
+        specialty_id
       } = result.data;
-      await client.query(ClassDoctorModel.updateDoctorByEmail, [
+      const info = await client.query(ClassDoctorModel.updateDoctorByEmail, [
         id,
         licenceNumber,
         identification_number,
         name,
         lastName,
         phoneNumber,
-        email,
         active,
         licencePhoto,
         profilePicture,
         birthDate,
         biography,
-        speciality_id
+        specialty_id
       ]);
+      console.log(info)
       return res.status(200).json({
+        id,
+        licenceNumber,
+        identification_number,
         name,
         lastName,
-        email,
-        identificationNumber,
-        birthDate,
+        phoneNumber,
+        active,
+        licencePhoto,
         profilePicture,
-        genre,
-        countryId,
-        identificationType,
+        birthDate,
+        biography,
+        specialty_id
       });
     } catch (err) {
       console.error("Error actualizando usuario:", err);

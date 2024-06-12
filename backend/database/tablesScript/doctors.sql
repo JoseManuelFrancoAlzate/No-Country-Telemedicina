@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS public.doctors
     genre character varying(50),
     birth_date date,
     biography text COLLATE pg_catalog."default",
-    speciality_id bigint;
+    speciality_id bigint,
     CONSTRAINT doctors_pkey PRIMARY KEY (id),
     CONSTRAINT doctors_email_key UNIQUE (email),
     UNIQUE (licence_number, identification_number),

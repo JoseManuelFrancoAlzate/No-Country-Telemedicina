@@ -18,12 +18,12 @@ const doctorSchema = z.object({
 });
 
 const putDoctorSchema = z.object({
+  id:z.number(),
   licenceNumber: z.string().max(50),
   identification_number: z.string().max(50),
   name: z.string().max(50).optional(),
   lastName: z.string().max(50).optional(),
   phoneNumber: z.number().optional(),
-  email: z.string().email(),
   active: z.boolean().optional(),
   licencePhoto: z.string().optional(),
   profilePicture: z.string().optional(),
@@ -31,7 +31,7 @@ const putDoctorSchema = z.object({
     message: 'Invalid date format',
   }).optional(),
   biography: z.string().optional(),
-  speciality:z.string().optional(),
+  specialty_id:z.number(),
 });
 
 export const validatePostDoctor = (data) => doctorSchema.safeParse(data);
@@ -39,3 +39,5 @@ export const validatePostDoctor = (data) => doctorSchema.safeParse(data);
 function validatePutDoctor (object) {
   return putDoctorSchema.safeParse(object)
 }
+
+export { validatePutDoctor }

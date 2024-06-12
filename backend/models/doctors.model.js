@@ -11,7 +11,9 @@ class DoctorModel {
     deleteDoctorByDni = 'DELETE FROM doctors WHERE dni = $1';
     deleteDoctorByEmail = 'DELETE FROM doctors WHERE email = $1';
 
-    updateDoctorByEmail ='UPDATE doctors  SET name=$2, last_name=$3, email=$4 ,identification_number=$5 ,birth_date=$6 ,profile_picture=$7,genre=$8,country_id=$9,identification_type=$10 WHERE id = $1 '
+    updateDoctorByEmail ='UPDATE doctors  SET licence_number=$2, identification_number=$3, name=$4 ,last_name=$5 ,phone_number=$6 ,active=$7,licence_photo=$8,profile_picture=$9,birth_date=$10,biography=$11,specialty_id=$12  WHERE id = $1 '
+
+
   }
   
   const ClassDoctorModel = new DoctorModel();
