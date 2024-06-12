@@ -1,6 +1,6 @@
 import { client } from '../db.js';
 import { ClassDoctorModel } from '../models/doctors.model.js';
-import { validatePostDoctor } from '../utils/validators/doctorsValidator.js'; // Asegúrate de crear el validador correspondiente
+import { validatePostDoctor, validatePutDoctor } from '../utils/validators/doctorsValidator.js'; // Asegúrate de crear el validador correspondiente
 
 class DoctorsController {
   /**
@@ -115,6 +115,61 @@ class DoctorsController {
       }
     } catch (err) {
       return res.status(500).json({ error: err.message });
+    }
+  }
+
+  async put(req, res) {
+    const result = validatePutDoctor(req.body);
+
+    if (result.error) {
+      return res.status(400).json(result.error.issues);
+    }
+
+    try {
+      const {
+        id,
+        licenceNumber,
+        identification_number,
+        name,
+        lastName,
+        phoneNumber,
+        email,
+        active,
+        licencePhoto,
+        profilePicture,
+        birthDate,
+        biography,
+        speciality_id
+      } = result.data;
+      await client.query(ClassDoctorModel.updateDoctorByEmail, [
+        id,
+        licenceNumber,
+        identification_number,
+        name,
+        lastName,
+        phoneNumber,
+        email,
+        active,
+        licencePhoto,
+        profilePicture,
+        birthDate,
+        biography,
+        speciality_id
+      ]);
+      return res.status(200).json({
+        name,
+        lastName,
+        email,
+        identificationNumber,
+        birthDate,
+        profilePicture,
+        genre,
+        countryId,
+        identificationType,
+      });
+    } catch (err) {
+      console.error("Error actualizando usuario:", err);
+      return res.status(500).json({ message: "Error actualizando usuario" });
     }
   }
 }

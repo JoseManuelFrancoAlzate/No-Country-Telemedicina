@@ -10,6 +10,8 @@ class DoctorModel {
   
     deleteDoctorByDni = 'DELETE FROM doctors WHERE dni = $1';
     deleteDoctorByEmail = 'DELETE FROM doctors WHERE email = $1';
+
+    updateDoctorByEmail ='UPDATE doctors  SET name=$2, last_name=$3, email=$4 ,identification_number=$5 ,birth_date=$6 ,profile_picture=$7,genre=$8,country_id=$9,identification_type=$10 WHERE id = $1 '
   }
   
   const ClassDoctorModel = new DoctorModel();

@@ -13,7 +13,7 @@ doctorRouter.get('/dni', ClassDoctorsController.get); //getDoctorByDni
 doctorRouter.post('/', ClassDoctorsController.post);
 
 // Eliminar un médico por su DNI
-doctorRouter.delete('/dni', ClassDoctorsController.delete);
+doctorRouter.delete('/', ClassDoctorsController.delete);
 
 //Para modificar por dni:
 //doctorRouter.put('/dni', ClassDoctorsController.put); //getDoctorByDni
