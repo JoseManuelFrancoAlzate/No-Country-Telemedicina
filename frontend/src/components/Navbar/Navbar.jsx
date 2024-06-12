@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import { navigationItem } from "../../constants/";
 import Image from "next/image";

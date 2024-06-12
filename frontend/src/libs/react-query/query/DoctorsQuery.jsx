@@ -1,6 +1,6 @@
 "use client";
 
-import { getDoctors } from "@/api/Doctors";
+import { getDoctors, getDoctorsEmail } from "@/api/Doctors";
 import { useQuery } from "@tanstack/react-query";
 
 export const getAllDoctors = () => {
@@ -10,3 +10,10 @@ export const getAllDoctors = () => {
     queryFn: () => getDoctors(),
   });
 };
+
+export const getEmailDoctors = (email)=>{
+  return useQuery({
+    queryKey: ['getEmailDoctors'],
+    queryFn: () => getDoctorsEmail(email),
+  })
+}

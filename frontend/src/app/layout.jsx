@@ -1,9 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
+import axios from 'axios';
+
+axios.defaults.baseURL = 'http://localhost:3001/';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +22,7 @@ export default function RootLayout({ children }) {
     <ReactQueryProvider>
       <html lang="en">
         <body className={inter.className}>
-          <Toaster />
-
+          <Toaster/>
           {children}
         </body>
       </html>

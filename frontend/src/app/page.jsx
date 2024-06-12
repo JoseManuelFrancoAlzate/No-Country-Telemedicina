@@ -6,6 +6,7 @@ import Detail from "@/components/Detail/Detail";
 import Testimonials from "@/components/Testimonials/Testimonials";
 import Questions from "@/components/Questions/Questions";
 import About from "@/components/About/About";
+import DoctorFilters from "@/components/DoctorFilters/DoctorFilters";
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Testimonials/>
       <Questions/>
       <About/>
+      <DoctorFilters/>
     </>
   );
 }
