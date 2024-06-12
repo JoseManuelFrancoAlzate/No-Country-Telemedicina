@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS public.doctors
     identification_number character varying(50) COLLATE pg_catalog."default" ,
     name character varying(50) COLLATE pg_catalog."default" ,
     last_name character varying(50) COLLATE pg_catalog."default" ,
+    phone_number bigint ,
     email character varying(100) COLLATE pg_catalog."default" NOT NULL,
     active boolean NOT NULL DEFAULT false,
     licence_photo text COLLATE pg_catalog."default",

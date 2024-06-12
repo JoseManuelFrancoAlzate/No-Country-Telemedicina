@@ -2,7 +2,7 @@ import  z  from 'zod';
 
 const doctorSchema = z.object({
   licenceNumber: z.string().max(50),
-  identification_number: z.string().max(50),
+  dni: z.string().max(50),
   name: z.string().max(50),
   lastName: z.string().max(50),
   phoneNumber: z.number(),

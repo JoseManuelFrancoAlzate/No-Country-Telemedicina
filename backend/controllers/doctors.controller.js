@@ -53,7 +53,7 @@ class DoctorsController {
 
     const {
       licenceNumber,
-      dni,
+      identification_number,
       name,
       lastName,
       phoneNumber,
