@@ -18,7 +18,6 @@ export default function Home() {
       <Testimonials/>
       <Questions/>
       <About/>
-      <DoctorFilters/>
     </>
   );
 }

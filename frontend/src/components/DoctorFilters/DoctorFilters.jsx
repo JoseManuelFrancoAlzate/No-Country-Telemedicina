@@ -24,7 +24,7 @@ return(
             alt={doctor.email}
           />
           <div className="text-center">
-            <p className="text-lg font-bold mb-1">Fernando Torres</p>
+           {doctor.name ?  <p className="text-lg font-bold mb-1">{doctor.name}</p> : <p className="text-lg font-bold mb-1">Null Name</p>}
             <p className="text-gray-600">Terapeuta</p>
             <p>{doctor.email}</p>
           </div>

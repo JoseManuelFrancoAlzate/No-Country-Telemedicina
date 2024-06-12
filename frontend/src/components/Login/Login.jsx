@@ -34,6 +34,7 @@ const Login = () => {
     }
   };
 
+
   return (
     <div>
       <div className="grid  bg-gray-300 grid-cols-1 md:grid-cols-2 min-h-screen bg-hero ">
