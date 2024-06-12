@@ -115,7 +115,7 @@ class LoginController {
         expiresIn: "1d",
       });
 
-      res.status(200).json({ token: token });
+      res.status(200).json({user: user.rows, token: token });
     } catch (error) {
       console.error("Login error:", error);
       res.status(500).json({ message: "Internal server error" });

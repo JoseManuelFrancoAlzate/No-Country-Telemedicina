@@ -210,28 +210,8 @@ INSERT INTO "doctors" ("licence_number", "dni", "name", "last_name", "phone_numb
 -- MEDICAL_RECORDS inserts
 INSERT INTO "medical_records" ("date", "doctor_id", "consultation_reason", "recomendations", "diagnosis", "users_id") VALUES ('2024-05-17', 1, 'dolor de espalda', 'no sentarse tanto tiempo', 'tomar acetaminofen 1 cada 8 horas', 1);
 
---SPECIALTY inserts
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Dermatology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Cardiology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Neurology', true);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Anesthesiology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Geriatric medicine', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Oncology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Gastroenterology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Ophthalmology', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ('Dentist', false);
-INSERT INTO "specialty" ("name", "is_mental_care") VALUES ( 'Psychiatry', true);
 
--- DOCTORS_HAS_SPECIALTY inserts
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 1);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 2);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 3);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 4);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 5);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 6);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 7);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 8);
-INSERT INTO "doctors_specialty" ("doctors_id", "specialty_id") VALUES (1, 9);
+
 
 -- APPOINTMENTS inserts
 INSERT INTO "appointments" ("appointment_date", "attended", "doctor_rating", "users_id", "doctors_id") VALUES ('2024-05-17', true, 5, 1, 1);

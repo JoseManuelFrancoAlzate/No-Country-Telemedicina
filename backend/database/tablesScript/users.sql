@@ -18,5 +18,5 @@ CREATE TABLE IF NOT EXISTS public.users
     CONSTRAINT users_countries_id_fkey FOREIGN KEY (country_id)
     REFERENCES public.country (id),
     CONSTRAINT users_indentification_type_id_fkey FOREIGN KEY (identification_type)
-    REFERENCES public.identification_type (id),
+    REFERENCES public.identification_type (id)
 );
