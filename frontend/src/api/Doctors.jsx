@@ -7,10 +7,10 @@ export const getDoctors = async () => {
     return res.data;
   };
 
-  export const getDoctorsEmail = async(email)=>{
+  export const getDoctorId = async(id)=>{
     try {
       console.log('Obteniendo Doctor')
-      const res = await axiosConfig.get(`/doctors/?email=${email}`);
+      const res = await axiosConfig.get(`/doctors/profile/?id=${id}`);
       return res.data;
     } catch (error) {
       console.error('Error al obtener el email', error);

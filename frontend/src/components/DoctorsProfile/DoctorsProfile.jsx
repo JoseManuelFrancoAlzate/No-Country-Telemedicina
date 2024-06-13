@@ -4,18 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import profilePic from "/public/Elliot.svg"; // Ajusta el path a tu imagen
 import doctorPic from "/public/Andrea.svg";
-import { getEmailDoctors } from "@/libs/react-query/query/DoctorsQuery";
+import {getDoctorById  } from "@/libs/react-query/query/DoctorsQuery";
 import {  useParams} from "next/navigation"
 
 const DoctorsProfile = () => {
   const router = useParams()
 
-  console.log(router.email)
+  console.log(router.id)
 
-    const {data: doctorData, error, isLoading} = getEmailDoctors(router.email)
+    const {data: doctorData, error, isLoading} = getDoctorById(router.id)
     if(isLoading) return <div>Loading...</div>
     if(error) return <div>Error loading doctor</div>
-    console.log(doctorData)
+    console.log("doc",  doctorData)
   const handleContactClick = () => {
     // Aquí puedes implementar la lógica para el contacto con el doctor
     // Por ejemplo, abrir un modal de contacto o redirigir a una página de contacto
@@ -70,7 +70,7 @@ const DoctorsProfile = () => {
             <section className="bg-green-100 p-4 rounded-lg shadow">
               <h2 className="text-xl font-bold text-gray-800">Login Information</h2>
               <p className="mt-2">
-                Your Email: <span className="text-gray-600">{doctorData.email}</span>
+                Your Email: <span className="text-gray-600">{doctorData.user.email}</span>
               </p>
               <p className="mt-2">
                 Your Phone Number: <span className="text-gray-600">5563236019</span>
