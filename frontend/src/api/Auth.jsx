@@ -22,6 +22,19 @@ export const logout = () => {
     };
 
 
+
+  //DOCTORS
+
+  export const registerDoctors = async (data) => {
+    data["role"] = "DOCTOR";
+    console.log(data);
+    const res = await axiosConfig.post("/auth/signup", data);
+    return res.data;
+  };
+  
+   
+
+
     /*
 ALTER TABLE login ALTER COLUMN role DROP NOT NULL;
 
