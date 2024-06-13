@@ -50,7 +50,6 @@ class LoginController {
       
       if (role=="USER"){
         await client.query(ClassUserModel.postUser, [
-          id,
           name,
           lastName,
           email=email,
@@ -60,7 +59,7 @@ class LoginController {
           genre,
           countryId,
           identificationType,
-          speciality_id,
+          
         ])       
       } else if (role=="DOCTOR"){
         await client.query(ClassDoctorModel.postDoctor, [
