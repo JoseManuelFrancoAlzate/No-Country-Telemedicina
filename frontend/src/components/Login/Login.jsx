@@ -64,7 +64,7 @@ const Login = () => {
 
           <div className="mt-16 ">
             <p className=" text-3xl font-black text-blue-500">
-              {loginPage ? "Login To Your Account" : "Create Acount"}
+              {loginPage ? "Login To Your Account User" : "Create Acount User"}
             </p>
             <div className="mt-10 grid grid-cols-2 gap-8 ">
               <button className="flex gap-2  items-center px-3 py-1 border border-gray-300 rounded-xl focus:outline-none shadow-sm ">
@@ -123,16 +123,24 @@ const Login = () => {
                   </p>
                 )}
               </div>
-              <p className="text-left mt-8">
+              <div className="grid grid-cols-2">
+              <p className="text-left mt-8 ">
                 {loginPage ? "Not Account?" : "Do you already have an account?"}
                 <button
                   onClick={() => setLoginPage(!loginPage)}
                   type="button"
                   className="text-blue-600 ml-2"
-                >
+                >   
                   {loginPage ? "Register" : "Login"}
                 </button>
               </p>
+              <p className='flex items-end'>
+              You're a Doctor?
+              <a href='/doctorsLogin' className="text-blue-600 ml-2">
+              Enter here
+              </a>
+              </p>
+              </div>
               <button className=" bg-blue-600 mt-10 transition-colorss duration-3400over:bg-blue-700 text-white p-3  rounded-lg focus:outline-none  w-10/12 ">
                 <p className="font-bold"> {loginPage ? "LOGIN" : "REGISTER"}</p>
               </button>
