@@ -44,7 +44,7 @@ export const useLogin = () => {
       const idUser = response.user[0].email;
       console.log("desde exito", response.user[0].id)
       toast.success("User login successfully", { position: "top-center" });
-      route.push(`/userProfile/${idUser}`);
+      route.push(`/doctorsFilter`);
     },
     onError: () => {
       toast.success("Error to login", { position: "top-center" });

@@ -6,7 +6,6 @@ import { useQuery } from "@tanstack/react-query";
 export const getAllDoctors = () => {
   return useQuery({
     queryKey: ["getDoctors"],
-    
     queryFn: () => getDoctors(),
   });
 };
