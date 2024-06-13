@@ -40,7 +40,7 @@ class UsersController {
 
   // GET USER BY EMAIL
   async getUserByEmail(req, res) {
-    const { email } = req.body;
+    const { email } = req.query;
     console.log("EMAIL ES", email);
     if (!email || typeof email !== "string") {
       return res.status(400).json({ error: "Type of email must be a string" });

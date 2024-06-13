@@ -11,6 +11,11 @@ userRouter
   .delete(ClassUsersController.delete)
   .put(ClassUsersController.put);
 
+userRouter
+  .route("/profile")
+  .get(ClassUsersController.getUserByEmail)
+
+
 // userRouter.route("/:dni").get(ClassUsersController.get);
 
 userRouter.route("/email").get(ClassUsersController.getUserByEmail);

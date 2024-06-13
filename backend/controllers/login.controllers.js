@@ -41,7 +41,7 @@ class LoginController {
       let phoneNumber;
       let licencePhoto;
       let active=false;
-      let speciality_id;
+      let speciality_id=1;
 
       
       
@@ -56,6 +56,7 @@ class LoginController {
           genre,
           countryId,
           identificationType,
+          speciality_id,
         ])       
       } else if (role=="DOCTOR"){
         await client.query(ClassDoctorModel.postDoctor, [
