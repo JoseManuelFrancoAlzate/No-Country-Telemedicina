@@ -41,7 +41,7 @@ export const useLogin = () => {
     mutationFn: (data) => login(data),
     mutationKey: ["login"],
     onSuccess: (response) => {
-      const idUser = response.user[0].email;
+      const idUser = response.user[0].id;
       console.log("desde exito", response.user[0].id)
       toast.success("User login successfully", { position: "top-center" });
       route.push(`/doctorsFilter`);

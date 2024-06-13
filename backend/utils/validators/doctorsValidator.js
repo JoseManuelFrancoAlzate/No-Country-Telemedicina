@@ -31,7 +31,7 @@ const putDoctorSchema = z.object({
     message: 'Invalid date format',
   }).optional(),
   biography: z.string().optional(),
-  specialty_id:z.number(),
+  speciality_id:z.number(),
 });
 
 export const validatePostDoctor = (data) => doctorSchema.safeParse(data);

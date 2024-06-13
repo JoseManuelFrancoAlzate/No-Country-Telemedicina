@@ -37,6 +37,35 @@ class DoctorsController {
     }
   }
 
+  // GET USER BY ID
+  async getDoctorById(req, res) {
+    const { id } = req.query;
+    console.log("EMAIL ES", id);
+    if (!id || typeof id !== "string") {
+      return res.status(400).json({ error: "Type of id must be a string" });
+    }
+
+    try {
+      const dbUser = await client.query(ClassDoctorModel.getDoctorById, [id]);
+      if (!dbUser.rows.length) {
+        // MODIFY HANDLE ERROR
+        console.error("User not Found in UsersController:", id);
+        return res.status(404).json({ message: "User Not Found" });
+      }
+
+      const user = dbUser.rows[0];
+      console.log("User found:", user);
+
+      return res.status(200).json({ user });
+    } catch (error) {
+      console.error("Error getUserByEmail", error);
+      return res.status(500).json({
+        message:
+          "Error al procesar su solicitud, porfavor intentelo nuevamente desde id",
+      });
+    }
+  }
+
   /**
    * Función encargada de guardar médicos en la base de datos
    *
@@ -139,7 +168,7 @@ class DoctorsController {
         profilePicture,
         birthDate,
         biography,
-        specialty_id
+        speciality_id
       } = result.data;
       const info = await client.query(ClassDoctorModel.updateDoctorByEmail, [
         id,
@@ -153,7 +182,7 @@ class DoctorsController {
         profilePicture,
         birthDate,
         biography,
-        specialty_id
+        speciality_id
       ]);
       console.log(info)
       return res.status(200).json({
@@ -168,7 +197,7 @@ class DoctorsController {
         profilePicture,
         birthDate,
         biography,
-        specialty_id
+        speciality_id
       });
     } catch (err) {
       console.error("Error actualizando usuario:", err);

@@ -28,6 +28,9 @@ class LoginController {
         role,
         (password = hashedPassword),
       ]);
+      const lastRegister= await client.query('SELECT * FROM login ORDER BY id DESC LIMIT 1')
+      console.log(lastRegister.rows[0].id)
+      let id=lastRegister.rows[0].id;
       let name;
       let lastName;
       let identificationNumber;
@@ -47,6 +50,7 @@ class LoginController {
       
       if (role=="USER"){
         await client.query(ClassUserModel.postUser, [
+          id,
           name,
           lastName,
           email=email,
@@ -60,7 +64,7 @@ class LoginController {
         ])       
       } else if (role=="DOCTOR"){
         await client.query(ClassDoctorModel.postDoctor, [
-
+          id,
           licenceNumber,
           identificationNumber,
           name,

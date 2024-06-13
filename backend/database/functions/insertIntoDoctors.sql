@@ -1,4 +1,5 @@
 CREATE OR REPLACE FUNCTION insert_into_doctors (
+    p_id bigint,
     p_licence_number character varying(50),
     p_identification_number character varying(50),
     p_name character varying(50),
@@ -16,6 +17,7 @@ RETURNS VOID AS
 $$
 BEGIN 
     INSERT INTO doctors (
+        id,
         licence_number, 
         identification_number, 
         name, 
@@ -29,6 +31,7 @@ BEGIN
         biography,
         speciality_id
     ) VALUES (
+        p_id,
         p_licence_number,
         p_identification_number,
         p_name,

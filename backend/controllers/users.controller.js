@@ -67,6 +67,35 @@ class UsersController {
     }
   }
 
+  // GET USER BY ID
+  async getUserById(req, res) {
+    const { id } = req.query;
+    console.log("EMAIL ES", id);
+    if (!id || typeof id !== "string") {
+      return res.status(400).json({ error: "Type of id must be a string" });
+    }
+
+    try {
+      const dbUser = await client.query(ClassUserModel.getUserById, [id]);
+      if (!dbUser.rows.length) {
+        // MODIFY HANDLE ERROR
+        console.error("User not Found in UsersController:", id);
+        return res.status(404).json({ message: "User Not Found" });
+      }
+
+      const user = dbUser.rows[0];
+      console.log("User found:", user);
+
+      return res.status(200).json({ user });
+    } catch (error) {
+      console.error("Error getUserByEmail", error);
+      return res.status(500).json({
+        message:
+          "Error al procesar su solicitud, porfavor intentelo nuevamente desde id",
+      });
+    }
+  }
+
   /**
    * Funcion encargada de guardar usuarios en la base de datos
    *

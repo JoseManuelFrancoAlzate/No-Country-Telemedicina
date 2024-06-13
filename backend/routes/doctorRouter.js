@@ -9,6 +9,9 @@ doctorRouter.get('/', ClassDoctorsController.get);// getAllDoctors
 // Obtener un médico por su DNI
 doctorRouter.get('/dni', ClassDoctorsController.get); //getDoctorByDni
 
+doctorRouter.get('/profile', ClassDoctorsController.getDoctorById);
+
+
 // Crear un nuevo médico
 doctorRouter.post('/', ClassDoctorsController.post);
 
