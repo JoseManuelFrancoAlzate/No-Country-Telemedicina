@@ -63,7 +63,7 @@ class DoctorsController {
       profilePicture,
       birthDate,
       biography,
-      speciality
+      speciality_id
     } = result.data;
 
     try {
@@ -80,7 +80,7 @@ class DoctorsController {
           profilePicture,
           birthDate,
           biography,
-          speciality
+          speciality_id
         ]);
 
       return res.status(200).json(result.data);
