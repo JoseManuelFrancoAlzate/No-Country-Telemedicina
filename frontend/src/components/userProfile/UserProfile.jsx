@@ -4,12 +4,13 @@ import Image from "next/image";
 import profilePic from "/public/Elliot.svg"; // Ajusta el path a tu imagen
 import doctorPic from "/public/Andrea.svg";
 import { useParams } from "next/navigation";
-import { getUserByDni } from "@/libs/react-query/query/UserQuery";
+import { getUserByDni, getUserById, getDoctorById } from "@/libs/react-query/query/UserQuery";
 import { useLogin } from "@/libs/react-query/query-mutation/AuthMutation";
 
 const UserProfile = () => {
-  const { email } = useParams();
-  const { data: resData } = getUserByDni(email);
+  let { id } = useParams();
+  const { data: resData } = getDoctorById(id);
+  console.log(id,"first")
 
   console.log("Datosssssssssssss", resData);
 

@@ -1,6 +1,6 @@
 class SpecialityModel {
 
-    getAll = "SELECT * FROM specialty"
+    getAll = "SELECT * FROM speciality"
 
 }
 

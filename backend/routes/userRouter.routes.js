@@ -13,7 +13,7 @@ userRouter
 
 userRouter
   .route("/profile")
-  .get(ClassUsersController.getUserByEmail)
+  .get(ClassUsersController.getUserById)
 
 
 // userRouter.route("/:dni").get(ClassUsersController.get);

@@ -17,6 +17,8 @@ class UserModel {
     this.getAllUsers = 'SELECT * FROM users'
     this.getUsersByDni = 'SELECT * FROM users WHERE identification_number = $1'
     this.getUserByEmail = 'SELECT * FROM users WHERE email = $1'
+    this.getUserById = 'SELECT * FROM users WHERE id = $1'
+
     this.postUser = 'SELECT insert_into_users($1, $2, $3, $4, $5, $6, $7, $8, $9)'
     this.deleteUsersByDni = 'DELETE FROM users WHERE identification_number = $1'
     this.deleteUsersByEmail = 'DELETE FROM users WHERE email = $1'
