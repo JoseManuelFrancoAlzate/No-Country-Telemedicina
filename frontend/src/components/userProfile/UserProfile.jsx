@@ -8,8 +8,8 @@ import { getUserByDni } from "@/libs/react-query/query/UserQuery";
 import { useLogin } from "@/libs/react-query/query-mutation/AuthMutation";
 
 const UserProfile = () => {
-  const { id } = useParams();
-  const { data: resData } = getUserByDni("correo@correo.com");
+  const { email } = useParams();
+  const { data: resData } = getUserByDni(email);
 
   console.log("Datosssssssssssss", resData);
 
