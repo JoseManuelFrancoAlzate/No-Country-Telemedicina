@@ -37,5 +37,4 @@ export const logout = () => {
 
     /*
 ALTER TABLE login ALTER COLUMN role DROP NOT NULL;
-
     */

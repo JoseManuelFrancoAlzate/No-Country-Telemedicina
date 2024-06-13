@@ -2,21 +2,27 @@
 
 import Link from "next/link";
 import { getAllDoctors } from "@/libs/react-query/query/DoctorsQuery"
-
+import { getAllSpecialities} from "@/libs/react-query/query/SpecialitiesQuery";
 const DoctorFilters = ()=>{
+
   const {data: doctors, error, isLoading} = getAllDoctors();
+  const {data: specialities, error: errorS, isLoading: isLoadingS} = getAllSpecialities()
 
   if(isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading doctors</div>;
-
-  console.log(doctors)
-return(
   
-    <div className="flex items-center justify-center h-screen bg-gray-100 ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+  if(isLoadingS) return <div>Loading...</div>;
+  if (errorS) return <div>Error loading specialities</div>;
+  console.log(specialities)
+  console.log(doctors)
 
+
+
+return(
+    <div className="flex items-center justify-center h-screen bg-gray-100 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
          {doctors.map(doctor => (
-          <Link href={`doctorsProfile/${doctor.email}`}>
+          <Link href={`doctorsProfile/${doctor.email}`}> 
         <div key={doctor.id} className="border-2 border-pink-950 p-8 w-80 flex flex-col items-center rounded-lg bg-white shadow-lg">
           <img 
             src='https://www.shutterstock.com/image-photo/healthcare-medical-staff-concept-portrait-600nw-2281024823.jpg'
