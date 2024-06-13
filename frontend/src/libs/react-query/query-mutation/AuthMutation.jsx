@@ -52,6 +52,22 @@ export const useLogin = () => {
   });
 };
 
+export const useLoginDoctors = () => {
+  const route = useRouter();
+  return useMutation({
+    mutationFn: (data) => login(data),
+    mutationKey: ["login"],
+    onSuccess: (response) => {
+      const idUser = response.user[0].id;
+      console.log("desde exito", response.user[0].id)
+      toast.success("User login successfully", { position: "top-center" });
+      route.push(`/doctorsProfile/${response.user[0].email}`);
+    },
+    onError: () => {
+      toast.success("Error to login", { position: "top-center" });
+    },
+  });
+};
 
 
 

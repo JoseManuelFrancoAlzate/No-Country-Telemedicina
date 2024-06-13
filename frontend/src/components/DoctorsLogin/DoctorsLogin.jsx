@@ -8,7 +8,7 @@ import { userSchema } from "@/validations/validations";
 import { useState } from "react";
 import {
   useRegisterDoctors,
-  useLogin,
+  useLoginDoctors,
 } from "@/libs/react-query/query-mutation/AuthMutation";
 
 const DoctorsLogin = () => {
@@ -24,7 +24,7 @@ const DoctorsLogin = () => {
   });
 
   const { mutateAsync: registerUser } = useRegisterDoctors();
-  const { mutateAsync: loginUser } = useLogin();
+  const { mutateAsync: loginUser } = useLoginDoctors();
 
   const onSubmit = (data) => {
     if (loginPage) {
