@@ -45,7 +45,7 @@ const DoctorsProfile = () => {
             </nav>
           </div>
           <div className="flex items-center space-x-4">
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Ask to edit</button>
+           <a href="/updateDataDoctor"> <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">Ask to edit</button></a>
             <div className="h-10 w-10 relative rounded-full overflow-hidden">
               <Image src={profilePic} layout="fill" objectFit="cover" alt="Profile picture" />
             </div>
