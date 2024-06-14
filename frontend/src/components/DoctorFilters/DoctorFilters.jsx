@@ -46,7 +46,7 @@ const DoctorFilters = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {newDoctors.map(doctor => (
-          <Link href={`doctorsProfile/${doctor.email}`} key={doctor.id}>
+          <Link href={`doctorsProfile/${doctor.id}`} key={doctor.id}>
             <div className="border-2 border-pink-950 p-8 w-80 flex flex-col items-center rounded-lg bg-white shadow-lg">
               <img
                 src='https://www.shutterstock.com/image-photo/healthcare-medical-staff-concept-portrait-600nw-2281024823.jpg'

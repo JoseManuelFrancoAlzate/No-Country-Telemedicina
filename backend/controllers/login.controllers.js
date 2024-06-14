@@ -60,6 +60,7 @@ class LoginController {
           countryId,
           identificationType,
 
+          
         ])       
       } else if (role=="DOCTOR"){
         await client.query(ClassDoctorModel.postDoctor, [
